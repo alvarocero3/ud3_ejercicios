@@ -34,4 +34,12 @@ class AlumnoController extends Controller
         Alumno::destroy($id);
         return response()->json(['message' => 'Alumno eliminado']);
     }
+
+    public function testEjer1(string $id)
+    {
+         $alumno = Alumno::find($id);
+         $alumno = Asignatura::find($id);
+         $alumno->notas();
+        return $alumno;
+    }
 }
